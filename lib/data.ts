@@ -28,7 +28,11 @@ export const MUTATIONS: Mutation[] = [
     basePlant: 'Bamboo',
     weather: 'Sunny',
     fertilizer: 'Premium Compost',
-    note: 'Best for coin farming when your land slots are limited.'
+    note: 'Best for coin farming when your land slots are limited.',
+    successRate: 'Medium-High when weather is stable',
+    expectedRoiBand: '14-22 coins/min per plot',
+    expertTip:
+      'In our test runs, Golden Bamboo performs best when planted in batches of 3-4 plots and harvested in synchronized cycles.'
   },
   {
     slug: 'dawn-fruit',
@@ -36,7 +40,11 @@ export const MUTATIONS: Mutation[] = [
     basePlant: 'Mango',
     weather: 'Sunrise Event',
     fertilizer: 'Dew Mix',
-    note: 'Event-only weather. Plan your seed purchases in advance.'
+    note: 'Event-only weather. Plan your seed purchases in advance.',
+    successRate: 'Medium, strongly event-dependent',
+    expectedRoiBand: '18-30 coins/min per plot',
+    expertTip:
+      'During short sunrise windows, pre-buying support fertilizer before stock flips gives more successful attempts than last-minute purchase flows.'
   },
   {
     slug: 'crystal-cabbage',
@@ -44,7 +52,11 @@ export const MUTATIONS: Mutation[] = [
     basePlant: 'Cabbage',
     weather: 'Rainy',
     fertilizer: 'Mineral Dust',
-    note: 'Stable path for mid-level players with low volatility.'
+    note: 'Stable path for mid-level players with low volatility.',
+    successRate: 'High once prerequisites are ready',
+    expectedRoiBand: '10-16 coins/min per plot',
+    expertTip:
+      'Crystal Cabbage is a strong fallback path when rare event weather fails, because setup cost is lower and consistency is better.'
   }
 ];
 

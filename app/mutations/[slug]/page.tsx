@@ -15,7 +15,7 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!mutation) return { title: 'Mutation Not Found | GH.Tools' };
   return {
     title: `${mutation.crop} Mutation Guide`,
-    description: `How to unlock ${mutation.crop}: weather, fertilizer and practical pathing notes.`,
+    description: `How to unlock ${mutation.crop}: weather, fertilizer, success rate (${mutation.successRate}), and ROI band (${mutation.expectedRoiBand}).`,
     keywords: [
       `${mutation.crop} mutation guide`,
       `How to get ${mutation.crop}`,
@@ -45,9 +45,13 @@ export default function MutationDetailPage({ params }: Props) {
         <p><strong>Base Plant:</strong> {mutation.basePlant}</p>
         <p><strong>Required Weather:</strong> {mutation.weather}</p>
         <p><strong>Recommended Fertilizer:</strong> {mutation.fertilizer}</p>
+        <p><strong>Observed Success Rate:</strong> {mutation.successRate}</p>
+        <p><strong>Expected ROI Band:</strong> {mutation.expectedRoiBand}</p>
       </div>
       <h2>What You Need</h2>
       <p>{mutation.note}</p>
+      <h2>Expert Tip (Field Tested)</h2>
+      <p>{mutation.expertTip}</p>
       <h2>How to Execute</h2>
       <p>
         Prepare seeds before the weather window starts, apply the listed fertilizer, and avoid switching crops

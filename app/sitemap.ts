@@ -3,7 +3,20 @@ import { MUTATIONS } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://gh-tools.pages.dev';
-  const core = ['/', '/calculator', '/stock-history', '/mutations', '/guides', '/about', '/contact', '/privacy', '/terms'].map((path) => ({
+  const core = [
+    '/',
+    '/calculator',
+    '/stock-history',
+    '/mutations',
+    '/guides',
+    '/guides/how-to-get-dawn-fruit',
+    '/guides/best-seeds-by-level',
+    '/guides/stock-reset-pattern',
+    '/about',
+    '/contact',
+    '/privacy',
+    '/terms'
+  ].map((path) => ({
     url: `${base}${path}`,
     lastModified: new Date()
   }));

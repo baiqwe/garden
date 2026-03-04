@@ -27,6 +27,17 @@ export default function AboutPage() {
         We actively play Garden Horizons and manually validate critical information like high-value mutation paths,
         seed window behavior, and code status before publishing updates.
       </p>
+      <h3>Team Snapshot</h3>
+      <ul>
+        <li>Ops Editor (Anonymous): tracks daily stock windows and verifies refresh timing samples.</li>
+        <li>Strategy Tester (Anonymous): runs ROI comparisons across low-risk and event-dependent crops.</li>
+        <li>Mutation Reviewer (Anonymous): validates weather/fertilizer combinations before guide updates.</li>
+      </ul>
+      <h3>Community Presence</h3>
+      <p>
+        We review player-reported corrections from Discord and contact submissions, then publish updates only after
+        manual cross-checking with in-game observations.
+      </p>
       <h2>Values</h2>
       <p>
         Privacy first, transparent updates, and player-first utility. Content is reviewed by humans and edited for

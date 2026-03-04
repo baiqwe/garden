@@ -30,4 +30,7 @@ export type Mutation = {
   weather: string;
   fertilizer: string;
   note: string;
+  successRate: string;
+  expectedRoiBand: string;
+  expertTip: string;
 };

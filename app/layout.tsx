@@ -70,6 +70,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Script>
           </>
         )}
+        <Script id="global-structured-data" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Organization',
+                name: 'GH.Tools',
+                url: 'https://gh-tools.pages.dev',
+                email: 'support@gh.tools'
+              },
+              {
+                '@type': 'WebSite',
+                name: 'Garden Horizons Hub',
+                url: 'https://gh-tools.pages.dev'
+              }
+            ]
+          })}
+        </Script>
         <header className="site-header">
           <div className="container nav-wrap">
             <Link href="/" className="brand">GH.Tools</Link>

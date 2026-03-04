@@ -22,6 +22,11 @@ export default function GuidesPage() {
     <section className="panel prose">
       <h1>Guides & Articles</h1>
       <p>
+        Core long-tail guides: <Link href="/guides/how-to-get-dawn-fruit">How to Get Dawn Fruit</Link>,{' '}
+        <Link href="/guides/best-seeds-by-level">Best Seeds by Level</Link>, and{' '}
+        <Link href="/guides/stock-reset-pattern">Stock Reset Pattern</Link>.
+      </p>
+      <p>
         Last reviewed: March 4, 2026. Author: GH.Tools gameplay team. This page is written for players who want a
         repeatable method, not one-off luck.
       </p>
@@ -95,6 +100,41 @@ export default function GuidesPage() {
         Continue with: <Link href="/">live stock tracker</Link>, <Link href="/mutations/dawn-fruit">Dawn Fruit guide</Link>,{' '}
         <Link href="/privacy">privacy policy</Link>, and <Link href="/about">about us</Link>.
       </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'How often should I check stock?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'For active sessions, every 2-5 minutes is enough. GH.Tools refreshes snapshot data every 90 seconds.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'What is a good ROI target for beginners?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Use your own costs and prioritize stable returns. Consistent low-risk ROI is better than volatile event-only peaks.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'Where can I report wrong data?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Use the contact page and include crop name, observed time, and context.'
+                }
+              }
+            ]
+          })
+        }}
+      />
     </section>
   );
 }

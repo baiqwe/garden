@@ -22,7 +22,17 @@ export default function PrivacyPage() {
       <ul>
         <li>Essential technical data required to load pages</li>
         <li>Optional anonymized analytics events (only if enabled)</li>
+        <li>Potential third-party ad serving and measurement data when ads are enabled</li>
       </ul>
+      <h2>Advertising and Cookies</h2>
+      <p>
+        When Google AdSense is enabled, third-party vendors including Google may use cookies to serve ads based on
+        prior visits to this site or other sites. Users can manage ad personalization through Google ad settings.
+      </p>
+      <p>
+        This policy is intended to align with Google publisher transparency requirements, including disclosure of
+        third-party cookie usage for advertising and measurement.
+      </p>
       <h2>What We Do Not Collect</h2>
       <ul>
         <li>Personal identity documents</li>
