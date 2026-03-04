@@ -3,8 +3,10 @@ import './globals.css';
 import Link from 'next/link';
 import Script from 'next/script';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gh-tools.pages.dev';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gh-tools.pages.dev'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Garden Horizons Hub | Stock, Mutations, ROI Tools',
     template: '%s | GH.Tools'
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
     title: 'Garden Horizons Hub',
     description: 'Farm smart with stock timers, mutation paths, and ROI tools.',
     type: 'website',
-    url: 'https://gh-tools.pages.dev'
+    url: siteUrl
   },
   twitter: {
     card: 'summary_large_image',
@@ -77,13 +79,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {
                 '@type': 'Organization',
                 name: 'GH.Tools',
-                url: 'https://gh-tools.pages.dev',
+                url: siteUrl,
                 email: 'support@gh.tools'
               },
               {
                 '@type': 'WebSite',
                 name: 'Garden Horizons Hub',
-                url: 'https://gh-tools.pages.dev'
+                url: siteUrl
               }
             ]
           })}

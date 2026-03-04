@@ -33,6 +33,10 @@ export default function PrivacyPage() {
         This policy is intended to align with Google publisher transparency requirements, including disclosure of
         third-party cookie usage for advertising and measurement.
       </p>
+      <p>
+        We explicitly disclose this for AdSense compliance: Google may use advertising cookies to personalize ad
+        delivery, and users can opt out of personalized advertising through Google Ads Settings.
+      </p>
       <h2>What We Do Not Collect</h2>
       <ul>
         <li>Personal identity documents</li>

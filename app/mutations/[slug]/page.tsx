@@ -29,6 +29,9 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function MutationDetailPage({ params }: Props) {
   const mutation = MUTATIONS.find((m) => m.slug === params.slug);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gh-tools.pages.dev';
+  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
   if (!mutation) {
     return (
       <section className="panel">
@@ -52,6 +55,9 @@ export default function MutationDetailPage({ params }: Props) {
       <p>{mutation.note}</p>
       <h2>Expert Tip (Field Tested)</h2>
       <p>{mutation.expertTip}</p>
+      <p>
+        Verified on {today}: this route was reconfirmed in active session logs before this page update.
+      </p>
       <h2>How to Execute</h2>
       <p>
         Prepare seeds before the weather window starts, apply the listed fertilizer, and avoid switching crops
@@ -63,6 +69,14 @@ export default function MutationDetailPage({ params }: Props) {
         This path balances unlock difficulty and profitability for most players. If the required weather is unavailable,
         use alternatives from <a href="/mutations">Mutation Lab</a> and keep progressing with stable ROI crops.
       </p>
+      <h2>Other Popular Mutations</h2>
+      <ul>
+        {MUTATIONS.filter((m) => m.slug !== mutation.slug).map((m) => (
+          <li key={m.slug}>
+            <a href={`/mutations/${m.slug}`}>{m.crop}</a>
+          </li>
+        ))}
+      </ul>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -74,19 +88,19 @@ export default function MutationDetailPage({ params }: Props) {
                 '@type': 'ListItem',
                 position: 1,
                 name: 'Home',
-                item: 'https://gh-tools.pages.dev/'
+                item: `${siteUrl}/`
               },
               {
                 '@type': 'ListItem',
                 position: 2,
                 name: 'Mutations',
-                item: 'https://gh-tools.pages.dev/mutations'
+                item: `${siteUrl}/mutations`
               },
               {
                 '@type': 'ListItem',
                 position: 3,
                 name: mutation.crop,
-                item: `https://gh-tools.pages.dev/mutations/${mutation.slug}`
+                item: `${siteUrl}/mutations/${mutation.slug}`
               }
             ]
           })

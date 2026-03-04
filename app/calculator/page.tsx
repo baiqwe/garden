@@ -24,6 +24,10 @@ export default function CalculatorPage() {
           Next steps: check <a href="/stock-history">stock history</a> for timing confidence and verify mutation
           prerequisites in <a href="/mutations">Mutation Lab</a>.
         </p>
+        <p>
+          Looking for better profit routes? Check the <a href="/mutations">Mutation Guide</a> and compare candidate
+          paths in <a href="/guides/best-seeds-by-level">Best Seeds by Level</a>.
+        </p>
       </section>
     </>
   );

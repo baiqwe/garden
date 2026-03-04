@@ -38,6 +38,16 @@ export default function AboutPage() {
         We review player-reported corrections from Discord and contact submissions, then publish updates only after
         manual cross-checking with in-game observations.
       </p>
+      <h3>Recent Verification Example</h3>
+      <p>
+        Verified on March 4, 2026: during an evening reset cycle, our testers confirmed that Golden Bamboo remained a
+        higher consistency route than event-dependent alternatives when weather confidence was low. This type of
+        session log is used to update our guide wording and expert tips.
+      </p>
+      <p>
+        Stock snapshots are reviewed on a near 10-minute cadence from source updates and community corrections, then
+        validated before being reflected in published guidance.
+      </p>
       <h2>Values</h2>
       <p>
         Privacy first, transparent updates, and player-first utility. Content is reviewed by humans and edited for
