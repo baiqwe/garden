@@ -78,7 +78,7 @@ export default function BestSeedsByLevelPage() {
         }}
       />
       <LongformBlock
-        title="分阶段作物选择的长期收益逻辑"
+        title="Long-Term Return Logic for Stage-Based Seed Selection"
         paragraphs={[...PAGE_NARRATIVES.calculator.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
       />
     </section>

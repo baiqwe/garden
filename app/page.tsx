@@ -44,15 +44,15 @@ export default async function HomePage() {
       <section className="media-strip">
         <article className="media-card">
           <img src="/illustrations/stock-board.svg" alt="Stock dashboard illustration" />
-          <p>实时库存版面示意：先看窗口，再看预算，再看执行条件。</p>
+          <p>Live stock layout: check window timing, budget readiness, and execution conditions first.</p>
         </article>
         <article className="media-card">
           <img src="/illustrations/mutation-path.svg" alt="Mutation path illustration" />
-          <p>变异路径示意：基础作物、天气、肥料三要素必须同步验证。</p>
+          <p>Mutation path model: base crop, weather, and fertilizer must be validated together.</p>
         </article>
         <article className="media-card">
           <img src="/illustrations/roi-grid.svg" alt="ROI chart illustration" />
-          <p>收益曲线示意：关注长期稳定区间，不迷信单次峰值。</p>
+          <p>ROI trend view: prioritize stable long-term bands over one-cycle peaks.</p>
         </article>
       </section>
 

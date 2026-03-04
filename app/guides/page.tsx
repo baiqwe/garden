@@ -138,7 +138,7 @@ export default function GuidesPage() {
         }}
       />
       <LongformBlock
-        title="指南中心方法学：如何构建可复用的赚钱流程"
+        title="Guide Hub Method: Building a Reusable Profit Workflow"
         paragraphs={[...PAGE_NARRATIVES.home.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
       />
     </section>

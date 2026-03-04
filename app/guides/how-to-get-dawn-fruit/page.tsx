@@ -100,7 +100,7 @@ export default function DawnFruitGuidePage() {
         }}
       />
       <LongformBlock
-        title="Dawn Fruit 深度执行手册"
+        title="Dawn Fruit Advanced Execution Playbook"
         paragraphs={[...PAGE_NARRATIVES.home.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
       />
     </section>

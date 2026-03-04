@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' }
     ],
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
-    other: [{ rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#2f7d4f' }]
+    other: [{ rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#1e4e3a' }]
   },
   manifest: '/site.webmanifest',
   openGraph: {
@@ -59,48 +59,24 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const navGroups = [
-    {
-      title: 'Game Content',
-      items: [
-        ['Live Stock', '/'],
-        ['Mutations', '/mutations'],
-        ['Calculator', '/calculator'],
-        ['Stock History', '/stock-history']
-      ]
-    },
-    {
-      title: 'Guides',
-      items: [
-        ['Guide Hub', '/guides'],
-        ['How to Get Dawn Fruit', '/guides/how-to-get-dawn-fruit'],
-        ['Best Seeds by Level', '/guides/best-seeds-by-level'],
-        ['Stock Reset Pattern', '/guides/stock-reset-pattern']
-      ]
-    },
-    {
-      title: 'Info',
-      items: [
-        ['About', '/about'],
-        ['Privacy', '/privacy'],
-        ['Terms', '/terms'],
-        ['Contact', '/contact']
-      ]
-    }
-  ];
+  const gaId = 'G-JKV8BSDTNP';
+  const quickLinks = [
+    ['Live Stock', '/'],
+    ['Mutation Lab', '/mutations'],
+    ['ROI Calculator', '/calculator'],
+    ['Stock History', '/stock-history'],
+    ['Guide Hub', '/guides'],
+    ['Dawn Fruit', '/guides/how-to-get-dawn-fruit'],
+    ['Best Seeds', '/guides/best-seeds-by-level']
+  ] as const;
 
   return (
     <html lang="en">
       <body>
-        {gaId && (
-          <>
-            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
-            <Script id="ga4-init" strategy="afterInteractive">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${gaId}');`}
-            </Script>
-          </>
-        )}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${gaId}');`}
+        </Script>
         <Script id="global-structured-data" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
             '@context': 'https://schema.org',
@@ -119,50 +95,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             ]
           })}
         </Script>
-        <div className="shell">
-          <aside className="sidebar">
-            <div className="sidebar-brand">
-              <span className="logo-dot">GH</span>
-              <div>
-                <strong>Garden Horizons</strong>
-                <p>WIKI & TOOLS</p>
-              </div>
+
+        <div className="site-root">
+          <header className="site-header">
+            <div className="container topbar">
+              <Link href="/" className="brand-mark">
+                <span className="brand-badge">GH</span>
+                <span className="brand-text">
+                  <strong>Garden Horizons Hub</strong>
+                  <em>Decision Tool Suite</em>
+                </span>
+              </Link>
+              <nav className="topnav">
+                <Link href="/">Home</Link>
+                <Link href="/mutations">Mutations</Link>
+                <Link href="/guides">Guides</Link>
+                <Link href="/calculator">Calculator</Link>
+              </nav>
             </div>
-            <div className="sidebar-search">Search guides, crops, paths...</div>
-            {navGroups.map((group) => (
-              <section key={group.title} className="sidebar-group">
-                <h3>{group.title}</h3>
-                <nav>
-                  {group.items.map(([label, href]) => (
-                    <Link key={href} href={href}>{label}</Link>
-                  ))}
-                </nav>
-              </section>
-            ))}
-          </aside>
-          <div className="content">
-            <header className="site-header">
-              <div className="container nav-wrap">
-                <Link href="/" className="brand">GH.Tools</Link>
-                <nav>
-                  <Link href="/">Home</Link>
-                  <Link href="/stock-history">Stock History</Link>
-                  <Link href="/mutations">Mutations</Link>
-                  <Link href="/calculator">Calculator</Link>
-                  <Link href="/guides">Guides</Link>
-                </nav>
-              </div>
-            </header>
-            <main className="container">{children}</main>
-            <footer className="site-footer">
-              <div className="container footer-links">
-                <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
-                <Link href="/privacy">Privacy</Link>
-                <Link href="/terms">Terms</Link>
-              </div>
-            </footer>
-          </div>
+            <div className="container quickbar">
+              {quickLinks.map(([label, href]) => (
+                <Link key={href} href={href}>{label}</Link>
+              ))}
+            </div>
+          </header>
+
+          <main className="container page-main">{children}</main>
+
+          <footer className="site-footer">
+            <div className="container footer-links">
+              <Link href="/about">About</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/privacy">Privacy</Link>
+              <Link href="/terms">Terms</Link>
+            </div>
+          </footer>
         </div>
       </body>
     </html>

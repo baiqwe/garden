@@ -74,7 +74,7 @@ export default function StockResetPatternPage() {
         }}
       />
       <LongformBlock
-        title="库存重置节奏的观察框架与误差控制"
+        title="Observation Framework and Error Control for Stock Reset Rhythm"
         paragraphs={[...PAGE_NARRATIVES.stock.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
       />
     </section>
