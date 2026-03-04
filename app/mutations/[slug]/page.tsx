@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import AdsterraSlot from '@/components/AdsterraSlot';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import LongformBlock from '@/components/LongformBlock';
 import { MUTATIONS } from '@/lib/data';
@@ -67,6 +68,7 @@ export default function MutationDetailPage({ params }: Props) {
         mid-cycle. Use <a href="/stock-history">stock history</a> to estimate timing and confirm expected return in
         the <a href="/calculator">ROI calculator</a>.
       </p>
+      <AdsterraSlot kind="leaderboard" id={`mutation-inline-${mutation.slug}`} />
       <h2>Why This Path Is Useful</h2>
       <p>
         This path balances unlock difficulty and profitability for most players. If the required weather is unavailable,

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AdsterraSlot from '@/components/AdsterraSlot';
 import CodeCard from '@/components/CodeCard';
 import LongformBlock from '@/components/LongformBlock';
 import StockPanel from '@/components/StockPanel';
@@ -34,6 +35,8 @@ export default async function HomePage() {
 
   return (
     <>
+      <AdsterraSlot kind="leaderboard" id="home-top" />
+
       <section className="hero">
         <p className="kicker">Decision-Support Tool</p>
         <h1>Garden Horizons Stock Notifier, ROI Calculator, and Mutation Guide</h1>
@@ -43,6 +46,8 @@ export default async function HomePage() {
       </section>
 
       <StockPanel initialSnapshot={stock} />
+
+      <AdsterraSlot kind="rectangle" id="home-middle" />
 
       <section className="media-strip">
         <article className="media-card">
@@ -109,6 +114,8 @@ export default async function HomePage() {
           frustration. We keep updating this recommendation as new reports arrive.
         </p>
       </section>
+
+      <AdsterraSlot kind="leaderboard" id="home-bottom" />
 
       <LongformBlock
         title={PAGE_NARRATIVES.home.title}

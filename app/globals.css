@@ -349,6 +349,30 @@ td {
   font-weight: 600;
 }
 
+.adsterra-wrap {
+  margin: 14px 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #f8fbf9);
+  padding: 10px;
+}
+
+.ad-label {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.adsterra-host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
 .footer-links {
   min-height: 58px;
   display: flex;

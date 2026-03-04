@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import AdsterraSlot from '@/components/AdsterraSlot';
 import LongformBlock from '@/components/LongformBlock';
 import ROICalculator from '@/components/ROICalculator';
 import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
@@ -16,6 +17,7 @@ export default function CalculatorPage() {
   return (
     <>
       <ROICalculator />
+      <AdsterraSlot kind="rectangle" id="calculator-inline" />
       <section className="panel prose">
         <h2>How to Read ROI Results</h2>
         <p>
