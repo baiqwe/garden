@@ -8,7 +8,7 @@ import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
 import { getInitialStock } from '@/lib/stock';
 
 export const metadata: Metadata = {
-  title: 'Garden Horizons Stock Notifier, Codes, Mutation Guide',
+  title: 'Garden Horizons Stock Notifier & Botanist Toolkit | gardenhorizonsstock.org',
   description:
     'Track Garden Horizons stock updates, redeem working codes, compare ROI, and plan mutation paths with practical guides.',
   keywords: [
@@ -17,7 +17,10 @@ export const metadata: Metadata = {
     'Garden Horizons mutation guide',
     'How to get Dawn Fruit',
     'Garden Horizons best seeds for level 10',
-    'Garden Horizons crop profit calculator'
+    'Garden Horizons crop profit calculator',
+    'Garden Horizons botanist',
+    'radiant petal guide',
+    'bamboo base price'
   ],
   alternates: {
     canonical: '/'
@@ -27,7 +30,7 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   const stock = await getInitialStock();
   const inStockNames = stock.items.map((item) => item.name);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gh-tools.pages.dev';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gardenhorizonsstock.org';
 
   return (
     <>
@@ -144,6 +147,13 @@ export default async function HomePage() {
                 url: siteUrl,
                 applicationCategory: 'GameApplication',
                 operatingSystem: 'Any',
+                featureList: [
+                  'Real-time stock tracking',
+                  'Stock history analytics',
+                  'Mutation path decision support',
+                  'ROI calculation engine',
+                  'Working promo code monitor'
+                ],
                 offers: {
                   '@type': 'Offer',
                   price: '0',
@@ -168,6 +178,35 @@ export default async function HomePage() {
                     '@type': 'HowToStep',
                     name: 'Execute farming plan',
                     text: 'Buy seeds with highest stable ROI and follow mutation requirements from detail pages.'
+                  }
+                ]
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: [
+                  {
+                    '@type': 'Question',
+                    name: 'How often is stock information updated?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Stock snapshots display freshness timestamps and are refreshed on a near real-time cadence with validation checks.'
+                    }
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Where can I learn Botanist and Radiant Petal strategy?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Use the Guides hub and the dedicated Botanist Leveling Guide for practical routes and progression logic.'
+                    }
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'How do I decide whether to buy a rare seed now?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Combine stock timing, ROI calculation, mutation prerequisites, and your budget reserve before entering.'
+                    }
                   }
                 ]
               },

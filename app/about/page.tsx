@@ -56,6 +56,10 @@ export default function AboutPage() {
         Stock snapshots are reviewed on a near 10-minute cadence from source updates and community corrections, then
         validated before being reflected in published guidance.
       </p>
+      <p>
+        Our automated script checks Garden Horizons stock data approximately every 10 minutes, and we cross-verify
+        high-impact changes with real-time player submissions in our community Discord workflow before publishing.
+      </p>
       <h2>Values</h2>
       <p>
         Privacy first, transparent updates, and player-first utility. Content is reviewed by humans and edited for

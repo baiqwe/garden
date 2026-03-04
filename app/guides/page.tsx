@@ -26,7 +26,8 @@ export default function GuidesPage() {
       <p>
         Core long-tail guides: <Link href="/guides/how-to-get-dawn-fruit">How to Get Dawn Fruit</Link>,{' '}
         <Link href="/guides/best-seeds-by-level">Best Seeds by Level</Link>, and{' '}
-        <Link href="/guides/stock-reset-pattern">Stock Reset Pattern</Link>.
+        <Link href="/guides/stock-reset-pattern">Stock Reset Pattern</Link>. New trend guide:{' '}
+        <Link href="/guides/botanist-leveling-guide">Botanist Leveling Guide</Link>.
       </p>
       <p>
         Last reviewed: March 4, 2026. Author: GH.Tools gameplay team. This page is written for players who want a

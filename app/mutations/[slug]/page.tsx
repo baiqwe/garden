@@ -31,7 +31,7 @@ export function generateMetadata({ params }: Props): Metadata {
 
 export default function MutationDetailPage({ params }: Props) {
   const mutation = MUTATIONS.find((m) => m.slug === params.slug);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gh-tools.pages.dev';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gardenhorizonsstock.org';
   const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   const longNarrative = mutation ? mutationNarrative(mutation.crop, mutation.weather, mutation.expectedRoiBand) : null;
 
@@ -80,6 +80,9 @@ export default function MutationDetailPage({ params }: Props) {
           </li>
         ))}
       </ul>
+      <p>
+        <a href="/" className="action-link">Check if {mutation.basePlant} seed is in stock now</a>
+      </p>
       <LongformBlock
         title={longNarrative!.title}
         paragraphs={[...longNarrative!.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}

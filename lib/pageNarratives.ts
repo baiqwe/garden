@@ -37,6 +37,15 @@ export const PAGE_NARRATIVES: Record<string, { title: string; paragraphs: string
       'Community correction systems reduce source bias. We prioritize reproducible reports with timestamps and cross-validation signals. The result is lower noise and higher practical reliability for planning decisions.',
       'The objective is not to catch every rare item. The objective is to maximize executable value within your available time and account constraints. Treat stock as a strategy input, not an emotional trigger.'
     ]
+  },
+  botanist: {
+    title: 'Botanist and Radiant Petal Progression Strategy',
+    paragraphs: [
+      'Botanist progression rewards consistency more than rare-event chasing. Players who maintain stable cycle throughput usually outlevel players who overcommit to sporadic high-variance entries.',
+      'Radiant Petal routes should be used as tactical upgrades when prerequisites are aligned, not as default baseline loops. This reduces resource burn and keeps account momentum healthy.',
+      'A strong Botanist framework combines stock-window awareness, conservative budget gates, and post-cycle variance review. These three controls produce better long-term progression than single-metric optimization.',
+      'When evaluating Botanist routes, prioritize reproducibility. If a method cannot be repeated across multiple sessions under realistic timing constraints, treat it as an opportunistic spike rather than a strategy core.'
+    ]
   }
 };
 

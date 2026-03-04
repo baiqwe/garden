@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/']
       }
     ],
-    host: 'https://gh-tools.pages.dev',
-    sitemap: 'https://gh-tools.pages.dev/sitemap.xml'
+    host: 'https://gardenhorizonsstock.org',
+    sitemap: 'https://gardenhorizonsstock.org/sitemap.xml'
   };
 }

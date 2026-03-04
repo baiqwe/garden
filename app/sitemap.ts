@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { MUTATIONS } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://gh-tools.pages.dev';
+  const base = 'https://gardenhorizonsstock.org';
   const core = [
     '/',
     '/calculator',
@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/guides',
     '/guides/how-to-get-dawn-fruit',
     '/guides/best-seeds-by-level',
+    '/guides/botanist-leveling-guide',
     '/guides/stock-reset-pattern',
     '/about',
     '/contact',

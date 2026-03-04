@@ -3,7 +3,7 @@ import './globals.css';
 import Link from 'next/link';
 import Script from 'next/script';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gh-tools.pages.dev';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gardenhorizonsstock.org';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -19,7 +19,10 @@ export const metadata: Metadata = {
     'Garden Horizons ROI calculator',
     'Garden Horizons Dawn Fruit',
     'Garden Horizons Bamboo mutation',
-    'Roblox Garden Horizons wiki tool'
+    'Roblox Garden Horizons wiki tool',
+    'Garden Horizons botanist',
+    'radiant petal guide',
+    'bamboo base price'
   ],
   alternates: {
     canonical: '/'
@@ -66,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     ['ROI Calculator', '/calculator'],
     ['Stock History', '/stock-history'],
     ['Guide Hub', '/guides'],
+    ['Botanist Guide', '/guides/botanist-leveling-guide'],
     ['Dawn Fruit', '/guides/how-to-get-dawn-fruit'],
     ['Best Seeds', '/guides/best-seeds-by-level']
   ] as const;
