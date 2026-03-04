@@ -1,0 +1,34 @@
+name: Update Stock Data
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Pull latest stock from feed
+        env:
+          STOCK_FEED_URL: ${{ secrets.STOCK_FEED_URL }}
+        run: node scripts/update-stock.mjs
+
+      - name: Commit update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/current-stock.json
+          git diff --cached --quiet || git commit -m "chore(data): update stock snapshot"
+          git push

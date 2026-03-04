@@ -1,0 +1,20 @@
+[
+  {
+    "seed": "Dawn Fruit Seed",
+    "rarity": "Legendary",
+    "appearances": 3,
+    "avgGapMinutes": 142
+  },
+  {
+    "seed": "Bamboo Seed",
+    "rarity": "Epic",
+    "appearances": 7,
+    "avgGapMinutes": 84
+  },
+  {
+    "seed": "Mango Seed",
+    "rarity": "Rare",
+    "appearances": 12,
+    "avgGapMinutes": 43
+  }
+]
