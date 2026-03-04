@@ -1,19 +1,44 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import CodeCard from '@/components/CodeCard';
 import StockPanel from '@/components/StockPanel';
 import { PROMO_CODES } from '@/lib/data';
+import { getInitialStock } from '@/lib/stock';
 
-export default function HomePage() {
+export const metadata: Metadata = {
+  title: 'Garden Horizons Stock Notifier, Codes, Mutation Guide',
+  description:
+    'Track Garden Horizons stock updates, redeem working codes, compare ROI, and plan mutation paths with practical guides.',
+  keywords: [
+    'Garden Horizons stock notifier',
+    'Garden Horizons codes',
+    'Garden Horizons mutation guide',
+    'How to get Dawn Fruit',
+    'Garden Horizons best seeds for level 10',
+    'Garden Horizons crop profit calculator'
+  ],
+  alternates: {
+    canonical: '/'
+  }
+};
+
+export default async function HomePage() {
+  const stock = await getInitialStock();
+  const inStockNames = stock.items.map((item) => item.name);
+
   return (
     <>
       <section className="hero">
         <p className="kicker">Decision-Support Tool</p>
-        <h1>Don't just farm. Farm smart.</h1>
-        <p>Track stock windows, copy working codes, and plan the highest ROI crop cycle in one place.</p>
+        <h1>Garden Horizons Stock Notifier, ROI Calculator, and Mutation Guide</h1>
+        <p>
+          Track stock windows, copy working codes, and plan high-ROI crop cycles with one player-focused toolkit.
+        </p>
       </section>
 
-      <StockPanel />
+      <StockPanel initialSnapshot={stock} />
 
-      <section className="panel">
+      <section className="panel" id="codes">
         <div className="panel-head">
           <h2>Smart Codes</h2>
           <span className="pill">Last verified manually</span>
@@ -25,19 +50,97 @@ export default function HomePage() {
         </ul>
       </section>
 
+      <section className="panel prose">
+        <h2>What This Site Solves</h2>
+        <p>
+          Garden Horizons players usually lose coins in two places: buying hype seeds at the wrong time and planting
+          without a repeatable profit model. GH.Tools focuses on these decisions with four linked workflows: stock
+          timing, mutation planning, ROI estimation, and code redemption. Instead of reading long wiki pages and
+          manually comparing values, you can move from data to action in one session.
+        </p>
+        <h2>How to Use the Toolset (Step by Step)</h2>
+        <p>
+          Step 1: open the live stock section and identify whether current offers fit your coin reserve. If you are
+          underfunded, do not force a legendary purchase. Step 2: run candidate crops through the <Link href="/calculator">ROI calculator</Link>
+          and compare stable coins-per-minute rather than best-case outcomes. Step 3: for advanced profit, open <Link href="/mutations">mutation pages</Link>
+          and verify weather and fertilizer prerequisites before spending. Step 4: apply currently <Link href="#codes">working codes</Link> to
+          reduce early-cycle risk.
+        </p>
+        <h2>Why This Method Works</h2>
+        <p>
+          The process aligns decision timing with opportunity windows. Stock timing protects your entry cost. ROI
+          filtering removes emotional overbuying. Mutation checks reduce failed attempts caused by missing conditions.
+          Combined, this gives a repeatable strategy for beginner and mid-level progression, especially when you have
+          limited plots and limited session time.
+        </p>
+        <h2>Recommended Internal Paths</h2>
+        <p>
+          New players should start with <Link href="/guides">Guides</Link>, then use <Link href="/stock-history">stock history</Link> to estimate
+          likely reappearance intervals. Advanced players can jump directly to specific mutation pages such as{' '}
+          <Link href="/mutations/dawn-fruit">Dawn Fruit</Link> and <Link href="/mutations/golden-bamboo">Golden Bamboo</Link>. If any data looks stale,
+          report it on the <Link href="/contact">contact page</Link>.
+        </p>
+      </section>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            name: 'Garden Horizons Hub',
-            url: 'https://gh-tools.pages.dev',
-            potentialAction: {
-              '@type': 'SearchAction',
-              target: 'https://gh-tools.pages.dev/mutations/{search_term_string}',
-              'query-input': 'required name=search_term_string'
-            }
+            '@graph': [
+              {
+                '@type': 'WebSite',
+                name: 'Garden Horizons Hub',
+                url: 'https://gh-tools.pages.dev',
+                potentialAction: {
+                  '@type': 'SearchAction',
+                  target: 'https://gh-tools.pages.dev/mutations/{search_term_string}',
+                  'query-input': 'required name=search_term_string'
+                }
+              },
+              {
+                '@type': 'ItemList',
+                name: 'Current Seed Stock',
+                dateModified: stock.lastUpdated,
+                itemListElement: inStockNames.map((name, index) => ({
+                  '@type': 'ListItem',
+                  position: index + 1,
+                  name
+                }))
+              },
+              {
+                '@type': 'SoftwareApplication',
+                name: 'GH.Tools',
+                applicationCategory: 'GameApplication',
+                operatingSystem: 'Any',
+                offers: {
+                  '@type': 'Offer',
+                  price: '0',
+                  priceCurrency: 'USD'
+                }
+              },
+              {
+                '@type': 'HowTo',
+                name: 'How to use stock tracker and ROI calculator',
+                step: [
+                  {
+                    '@type': 'HowToStep',
+                    name: 'Check current stock',
+                    text: 'Open the Live Stock Tracker and note rare seeds and next restock countdown.'
+                  },
+                  {
+                    '@type': 'HowToStep',
+                    name: 'Estimate ROI',
+                    text: 'Enter seed price, sell price, growth time, and plots in the ROI calculator.'
+                  },
+                  {
+                    '@type': 'HowToStep',
+                    name: 'Execute farming plan',
+                    text: 'Buy seeds with highest stable ROI and follow mutation requirements from detail pages.'
+                  }
+                ]
+              }
+            ]
           })
         }}
       />

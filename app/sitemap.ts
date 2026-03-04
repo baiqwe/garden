@@ -3,7 +3,7 @@ import { MUTATIONS } from '@/lib/data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://gh-tools.pages.dev';
-  const core = ['/', '/calculator', '/stock-history', '/mutations'].map((path) => ({
+  const core = ['/', '/calculator', '/stock-history', '/mutations', '/guides', '/about', '/contact', '/privacy', '/terms'].map((path) => ({
     url: `${base}${path}`,
     lastModified: new Date()
   }));

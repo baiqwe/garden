@@ -20,8 +20,8 @@ const formatRemaining = (ms: number) => {
   return `${m}m ${s}s`;
 };
 
-export default function StockPanel() {
-  const [snapshot, setSnapshot] = useState<StockSnapshot | null>(null);
+export default function StockPanel({ initialSnapshot }: { initialSnapshot: StockSnapshot }) {
+  const [snapshot, setSnapshot] = useState<StockSnapshot>(initialSnapshot);
   const [now, setNow] = useState<number>(Date.now());
   const [error, setError] = useState<string>('');
 
@@ -37,9 +37,9 @@ export default function StockPanel() {
           setSnapshot(data);
           setError('');
         }
-      } catch (e) {
+      } catch {
         if (mounted) {
-          setError('Unable to fetch latest stock data. Please retry shortly.');
+          setError('Unable to refresh latest stock data. Showing last available snapshot.');
         }
       }
     };
@@ -56,17 +56,8 @@ export default function StockPanel() {
   }, []);
 
   const remaining = useMemo(() => {
-    if (!snapshot) return '--';
     return formatRemaining(new Date(snapshot.nextRestockAt).getTime() - now);
   }, [snapshot, now]);
-
-  if (error) {
-    return <p className="card">{error}</p>;
-  }
-
-  if (!snapshot) {
-    return <p className="card">Loading latest stock...</p>;
-  }
 
   return (
     <section className="panel">
@@ -74,6 +65,7 @@ export default function StockPanel() {
         <h2>Live Stock Tracker</h2>
         <span className="pill">Refresh every 90s</span>
       </div>
+      {error && <p className="muted">{error}</p>}
       <div className="meta-grid">
         <p><strong>Last Updated:</strong> {snapshot.lastUpdated}</p>
         <p><strong>Next Restock In:</strong> {remaining}</p>

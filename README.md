@@ -8,6 +8,10 @@ Near real-time decision-support site for Garden Horizons players:
 - Mutation guide pages
 - ROI calculator
 - 24h stock history page
+- Trust pages: About, Contact, Privacy, Terms
+- Optional GA4 support via env var
+- Canonical + robots metadata and structured data
+- Favicon/manifest assets in `public/`
 
 ## Tech Choice
 
@@ -41,6 +45,7 @@ Build artifacts are generated in `out/`.
    - Build output directory: `out`
 4. Environment variables (optional):
    - `NODE_VERSION=20`
+   - `NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX` (optional)
 5. Deploy.
 
 ## Near Real-Time Data (No Backend)
@@ -88,3 +93,10 @@ Replace the placeholder form link in `components/StockPanel.tsx`:
 - `https://forms.gle/your-form-link`
 
 with your own form URL.
+
+## SEO Checklist Implemented
+
+- Canonical URL metadata per core page
+- Robots metadata + `robots.txt` + `sitemap.xml`
+- Structured data: `WebSite`, `ItemList`, `SoftwareApplication`, `HowTo`, `BreadcrumbList`
+- Internal links between stock, calculator, mutations, guides, and trust pages
