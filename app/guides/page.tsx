@@ -30,6 +30,11 @@ export default function GuidesPage() {
         <Link href="/guides/botanist-leveling-guide">Botanist Leveling Guide</Link>.
       </p>
       <p>
+        Additional trending routes: <Link href="/guides/botanist-progression-guide">Botanist Progression Guide</Link>,{' '}
+        <Link href="/guides/radiant-petal-mutation">Radiant Petal Mutation</Link>, and{' '}
+        <Link href="/guides/bamboo-economy-analysis">Bamboo Economy Analysis</Link>.
+      </p>
+      <p>
         Last reviewed: March 4, 2026. Author: GH.Tools gameplay team. This page is written for players who want a
         repeatable method, not one-off luck.
       </p>

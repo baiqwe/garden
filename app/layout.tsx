@@ -70,6 +70,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     ['Stock History', '/stock-history'],
     ['Guide Hub', '/guides'],
     ['Botanist Guide', '/guides/botanist-leveling-guide'],
+    ['Radiant Petal', '/guides/radiant-petal-mutation'],
+    ['Bamboo Economy', '/guides/bamboo-economy-analysis'],
     ['Dawn Fruit', '/guides/how-to-get-dawn-fruit'],
     ['Best Seeds', '/guides/best-seeds-by-level']
   ] as const;

@@ -247,6 +247,21 @@ label {
   font-size: 0.95rem;
 }
 
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+.checkbox-row input {
+  width: 18px;
+  height: 18px;
+}
+
 input {
   border: 1px solid var(--line);
   border-radius: 9px;

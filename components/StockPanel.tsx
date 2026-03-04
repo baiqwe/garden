@@ -12,6 +12,14 @@ const rarityStyle: Record<string, string> = {
   legendary: 'var(--legendary)'
 };
 
+const relatedLink = (name: string) => {
+  const n = name.toLowerCase();
+  if (n.includes('bamboo')) return '/guides/bamboo-economy-analysis';
+  if (n.includes('mango')) return '/mutations/dawn-fruit';
+  if (n.includes('radiant') || n.includes('petal')) return '/guides/radiant-petal-mutation';
+  return '';
+};
+
 const formatRemaining = (ms: number) => {
   if (ms <= 0) return 'Restocking now';
   const total = Math.floor(ms / 1000);
@@ -78,6 +86,11 @@ export default function StockPanel({ initialSnapshot }: { initialSnapshot: Stock
             <div>
               <strong>{item.name}</strong>
               <p className="muted">Buy {item.buyPrice} / Sell {item.expectedSellPrice}</p>
+              {relatedLink(item.name) && (
+                <p className="muted">
+                  <a href={relatedLink(item.name)}>View strategy</a>
+                </p>
+              )}
             </div>
             <div className="right">
               <span className="rarity" style={{ backgroundColor: rarityStyle[item.rarity] }}>{item.rarity}</span>

@@ -57,6 +57,18 @@ export const MUTATIONS: Mutation[] = [
     expectedRoiBand: '10-16 coins/min per plot',
     expertTip:
       'Crystal Cabbage is a strong fallback path when rare event weather fails, because setup cost is lower and consistency is better.'
+  },
+  {
+    slug: 'radiant-petal',
+    crop: 'Radiant Petal',
+    basePlant: 'Cosmos',
+    weather: 'Radiant Storm / Night',
+    fertilizer: 'Starlight Powder',
+    note: 'Extremely rare event route with very high upside and strict timing requirements.',
+    successRate: 'Very Low outside event alignment',
+    expectedRoiBand: '45-80 coins/min per plot',
+    expertTip:
+      'In March 2026 sessions, the best success pattern was pre-loading fertilizer and holding at least one fallback crop lane before event window entry.'
   }
 ];
 

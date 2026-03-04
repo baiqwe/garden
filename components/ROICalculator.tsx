@@ -7,11 +7,12 @@ const calculateROI = (
   sellPrice: number,
   growthTimeMinutes: number,
   weatherMultiplier = 1,
-  plots = 1
+  plots = 1,
+  botanistBonus = 1
 ) => {
   if (growthTimeMinutes <= 0 || plots <= 0) return 0;
   const netProfit = sellPrice * weatherMultiplier - seedPrice;
-  return (netProfit * plots) / growthTimeMinutes;
+  return (netProfit * plots * botanistBonus) / growthTimeMinutes;
 };
 
 export default function ROICalculator() {
@@ -20,10 +21,13 @@ export default function ROICalculator() {
   const [growthTime, setGrowthTime] = useState(18);
   const [weatherMultiplier, setWeatherMultiplier] = useState(1);
   const [plots, setPlots] = useState(8);
+  const [botanistBonusEnabled, setBotanistBonusEnabled] = useState(false);
+
+  const botanistBonus = botanistBonusEnabled ? 1.1 : 1;
 
   const roi = useMemo(
-    () => calculateROI(seedPrice, sellPrice, growthTime, weatherMultiplier, plots),
-    [seedPrice, sellPrice, growthTime, weatherMultiplier, plots]
+    () => calculateROI(seedPrice, sellPrice, growthTime, weatherMultiplier, plots, botanistBonus),
+    [seedPrice, sellPrice, growthTime, weatherMultiplier, plots, botanistBonus]
   );
 
   return (
@@ -36,6 +40,10 @@ export default function ROICalculator() {
         <label>Growth (minutes)<input type="number" value={growthTime} onChange={(e) => setGrowthTime(Number(e.target.value) || 0)} /></label>
         <label>Weather Multiplier<input type="number" step="0.1" value={weatherMultiplier} onChange={(e) => setWeatherMultiplier(Number(e.target.value) || 0)} /></label>
         <label>Available Plots<input type="number" value={plots} onChange={(e) => setPlots(Number(e.target.value) || 0)} /></label>
+        <label className="checkbox-row">
+          Botanist Bonus (+10%)
+          <input type="checkbox" checked={botanistBonusEnabled} onChange={(e) => setBotanistBonusEnabled(e.target.checked)} />
+        </label>
       </div>
       <p className="result">Estimated ROI: <strong>{roi.toFixed(2)} coins/min</strong></p>
     </section>
