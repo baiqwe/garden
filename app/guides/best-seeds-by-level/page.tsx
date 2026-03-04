@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import LongformBlock from '@/components/LongformBlock';
+import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
 
 export const metadata: Metadata = {
   title: 'Best Seeds by Level in Garden Horizons',
@@ -74,6 +76,10 @@ export default function BestSeedsByLevelPage() {
             dateModified: '2026-03-04'
           })
         }}
+      />
+      <LongformBlock
+        title="分阶段作物选择的长期收益逻辑"
+        paragraphs={[...PAGE_NARRATIVES.calculator.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
       />
     </section>
   );

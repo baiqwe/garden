@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 460'>
+  <rect width='800' height='460' fill='#f7efe2'/>
+  <rect x='40' y='50' width='720' height='360' rx='24' fill='#fffaf1' stroke='#dccfbf'/>
+  <text x='72' y='95' font-size='28' font-family='Arial' fill='#3b352f'>Live Stock Window</text>
+  <rect x='72' y='130' width='300' height='62' rx='12' fill='#e6f5ea'/>
+  <rect x='72' y='205' width='300' height='62' rx='12' fill='#e6effa'/>
+  <rect x='72' y='280' width='300' height='62' rx='12' fill='#f5eefa'/>
+  <rect x='420' y='130' width='300' height='62' rx='12' fill='#fff2dd'/>
+  <rect x='420' y='205' width='300' height='62' rx='12' fill='#edf6f1'/>
+  <rect x='420' y='280' width='300' height='62' rx='12' fill='#f2ece7'/>
+</svg>

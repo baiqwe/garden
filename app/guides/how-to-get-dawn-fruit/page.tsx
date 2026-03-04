@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import LongformBlock from '@/components/LongformBlock';
+import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
 
 export const metadata: Metadata = {
   title: 'How to Get Dawn Fruit in Garden Horizons',
@@ -96,6 +98,10 @@ export default function DawnFruitGuidePage() {
             ]
           })
         }}
+      />
+      <LongformBlock
+        title="Dawn Fruit 深度执行手册"
+        paragraphs={[...PAGE_NARRATIVES.home.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
       />
     </section>
   );

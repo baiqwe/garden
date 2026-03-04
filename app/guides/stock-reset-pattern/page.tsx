@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import LongformBlock from '@/components/LongformBlock';
+import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
 
 export const metadata: Metadata = {
   title: 'Garden Horizons Stock Reset Pattern Guide',
@@ -70,6 +72,10 @@ export default function StockResetPatternPage() {
             dateModified: '2026-03-04'
           })
         }}
+      />
+      <LongformBlock
+        title="库存重置节奏的观察框架与误差控制"
+        paragraphs={[...PAGE_NARRATIVES.stock.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
       />
     </section>
   );

@@ -60,6 +60,35 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const navGroups = [
+    {
+      title: 'Game Content',
+      items: [
+        ['Live Stock', '/'],
+        ['Mutations', '/mutations'],
+        ['Calculator', '/calculator'],
+        ['Stock History', '/stock-history']
+      ]
+    },
+    {
+      title: 'Guides',
+      items: [
+        ['Guide Hub', '/guides'],
+        ['How to Get Dawn Fruit', '/guides/how-to-get-dawn-fruit'],
+        ['Best Seeds by Level', '/guides/best-seeds-by-level'],
+        ['Stock Reset Pattern', '/guides/stock-reset-pattern']
+      ]
+    },
+    {
+      title: 'Info',
+      items: [
+        ['About', '/about'],
+        ['Privacy', '/privacy'],
+        ['Terms', '/terms'],
+        ['Contact', '/contact']
+      ]
+    }
+  ];
 
   return (
     <html lang="en">
@@ -90,27 +119,51 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             ]
           })}
         </Script>
-        <header className="site-header">
-          <div className="container nav-wrap">
-            <Link href="/" className="brand">GH.Tools</Link>
-            <nav>
-              <Link href="/">Home</Link>
-              <Link href="/stock-history">Stock History</Link>
-              <Link href="/mutations">Mutations</Link>
-              <Link href="/calculator">Calculator</Link>
-              <Link href="/guides">Guides</Link>
-            </nav>
+        <div className="shell">
+          <aside className="sidebar">
+            <div className="sidebar-brand">
+              <span className="logo-dot">GH</span>
+              <div>
+                <strong>Garden Horizons</strong>
+                <p>WIKI & TOOLS</p>
+              </div>
+            </div>
+            <div className="sidebar-search">Search guides, crops, paths...</div>
+            {navGroups.map((group) => (
+              <section key={group.title} className="sidebar-group">
+                <h3>{group.title}</h3>
+                <nav>
+                  {group.items.map(([label, href]) => (
+                    <Link key={href} href={href}>{label}</Link>
+                  ))}
+                </nav>
+              </section>
+            ))}
+          </aside>
+          <div className="content">
+            <header className="site-header">
+              <div className="container nav-wrap">
+                <Link href="/" className="brand">GH.Tools</Link>
+                <nav>
+                  <Link href="/">Home</Link>
+                  <Link href="/stock-history">Stock History</Link>
+                  <Link href="/mutations">Mutations</Link>
+                  <Link href="/calculator">Calculator</Link>
+                  <Link href="/guides">Guides</Link>
+                </nav>
+              </div>
+            </header>
+            <main className="container">{children}</main>
+            <footer className="site-footer">
+              <div className="container footer-links">
+                <Link href="/about">About</Link>
+                <Link href="/contact">Contact</Link>
+                <Link href="/privacy">Privacy</Link>
+                <Link href="/terms">Terms</Link>
+              </div>
+            </footer>
           </div>
-        </header>
-        <main className="container">{children}</main>
-        <footer className="site-footer">
-          <div className="container footer-links">
-            <Link href="/about">About</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/privacy">Privacy</Link>
-            <Link href="/terms">Terms</Link>
-          </div>
-        </footer>
+        </div>
       </body>
     </html>
   );

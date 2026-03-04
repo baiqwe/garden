@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import LongformBlock from '@/components/LongformBlock';
 import { STOCK_HISTORY } from '@/lib/data';
+import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
 
 export const metadata: Metadata = {
   title: 'Stock History (24h)',
@@ -42,6 +44,10 @@ export default function StockHistoryPage() {
         <a href="/calculator">ROI calculator</a> to verify if a rare purchase is still profitable for your current
         plot count.
       </p>
+      <LongformBlock
+        title={PAGE_NARRATIVES.stock.title}
+        paragraphs={[...PAGE_NARRATIVES.stock.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
+      />
     </section>
   );
 }

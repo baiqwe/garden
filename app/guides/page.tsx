@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import LongformBlock from '@/components/LongformBlock';
+import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
 
 export const metadata: Metadata = {
   title: 'Garden Horizons Guides: How, What, Why',
@@ -134,6 +136,10 @@ export default function GuidesPage() {
             ]
           })
         }}
+      />
+      <LongformBlock
+        title="指南中心方法学：如何构建可复用的赚钱流程"
+        paragraphs={[...PAGE_NARRATIVES.home.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
       />
     </section>
   );

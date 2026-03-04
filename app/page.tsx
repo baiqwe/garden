@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import CodeCard from '@/components/CodeCard';
+import LongformBlock from '@/components/LongformBlock';
 import StockPanel from '@/components/StockPanel';
 import { PROMO_CODES } from '@/lib/data';
+import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
 import { getInitialStock } from '@/lib/stock';
 
 export const metadata: Metadata = {
@@ -38,6 +40,21 @@ export default async function HomePage() {
       </section>
 
       <StockPanel initialSnapshot={stock} />
+
+      <section className="media-strip">
+        <article className="media-card">
+          <img src="/illustrations/stock-board.svg" alt="Stock dashboard illustration" />
+          <p>实时库存版面示意：先看窗口，再看预算，再看执行条件。</p>
+        </article>
+        <article className="media-card">
+          <img src="/illustrations/mutation-path.svg" alt="Mutation path illustration" />
+          <p>变异路径示意：基础作物、天气、肥料三要素必须同步验证。</p>
+        </article>
+        <article className="media-card">
+          <img src="/illustrations/roi-grid.svg" alt="ROI chart illustration" />
+          <p>收益曲线示意：关注长期稳定区间，不迷信单次峰值。</p>
+        </article>
+      </section>
 
       <section className="panel" id="codes">
         <div className="panel-head">
@@ -89,6 +106,11 @@ export default async function HomePage() {
           frustration. We keep updating this recommendation as new reports arrive.
         </p>
       </section>
+
+      <LongformBlock
+        title={PAGE_NARRATIVES.home.title}
+        paragraphs={[...PAGE_NARRATIVES.home.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
+      />
 
       <script
         type="application/ld+json"

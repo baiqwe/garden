@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import LongformBlock from '@/components/LongformBlock';
 import ROICalculator from '@/components/ROICalculator';
+import { COMMON_EEAT_PARAGRAPHS, PAGE_NARRATIVES } from '@/lib/pageNarratives';
 
 export const metadata: Metadata = {
   title: 'ROI Calculator',
@@ -29,6 +31,10 @@ export default function CalculatorPage() {
           paths in <a href="/guides/best-seeds-by-level">Best Seeds by Level</a>.
         </p>
       </section>
+      <LongformBlock
+        title={PAGE_NARRATIVES.calculator.title}
+        paragraphs={[...PAGE_NARRATIVES.calculator.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
+      />
     </>
   );
 }

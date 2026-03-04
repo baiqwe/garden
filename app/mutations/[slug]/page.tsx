@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import LongformBlock from '@/components/LongformBlock';
 import { MUTATIONS } from '@/lib/data';
+import { COMMON_EEAT_PARAGRAPHS, mutationNarrative } from '@/lib/pageNarratives';
 
 type Props = {
   params: { slug: string };
@@ -31,6 +33,7 @@ export default function MutationDetailPage({ params }: Props) {
   const mutation = MUTATIONS.find((m) => m.slug === params.slug);
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gh-tools.pages.dev';
   const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const longNarrative = mutation ? mutationNarrative(mutation.crop, mutation.weather, mutation.expectedRoiBand) : null;
 
   if (!mutation) {
     return (
@@ -77,6 +80,10 @@ export default function MutationDetailPage({ params }: Props) {
           </li>
         ))}
       </ul>
+      <LongformBlock
+        title={longNarrative!.title}
+        paragraphs={[...longNarrative!.paragraphs, ...COMMON_EEAT_PARAGRAPHS]}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

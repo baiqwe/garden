@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 460'>
+  <rect width='800' height='460' fill='#f8f2eb'/>
+  <rect x='40' y='50' width='720' height='360' rx='20' fill='#fffdf8' stroke='#e2d6c8'/>
+  <path d='M120 340 L240 280 L360 300 L480 200 L600 230 L700 150' stroke='#2f7d4f' stroke-width='10' fill='none'/>
+  <g fill='#2f7d4f'>
+    <circle cx='120' cy='340' r='10'/><circle cx='240' cy='280' r='10'/><circle cx='360' cy='300' r='10'/><circle cx='480' cy='200' r='10'/><circle cx='600' cy='230' r='10'/><circle cx='700' cy='150' r='10'/>
+  </g>
+  <text x='72' y='96' font-size='28' font-family='Arial' fill='#3b352f'>Profit ROI Trend</text>
+</svg>
